@@ -40,7 +40,7 @@ class FibonacciSequence {
             }
             values = sequence
         }
-        //TODO: Create an array which contains the numbers in the Fibonacci sequence, but don't add any numbers to the array which exceed the maxNumber. For example, if the maxNumber is 10 then the array should contain [0,1,1,2,3,5,8] because the next number is 13 which is higher than the maxNumber. If includesZero is false then you should not include the number 0 in the sequence.
+
     }
     
     init(numberOfItemsInSequence: UInt, includesZero: Bool) {
@@ -71,19 +71,14 @@ class FibonacciSequence {
                 sequence.append(nextNumber)
             }
             values = sequence
-            //TODO: Create an array which contains the numbers in the Fibonacci sequence, and the array should contain this many items: numberOfItemsInSequence. For example, if numberOfItemsInSequence is 10 then the array should contain [0,1,1,2,3,5,8,13,21,34] if inlcudesZero is true, or [1,1,2,3,5,8,13,21,34,55] if includesZero is false.
+
         }
     }
 }
-let fibonacciSequence = FibonacciSequence(maxNumber:2000, includesZero: true)
-println(fibonacciSequence.values)
-
-let anotherSequence = FibonacciSequence(numberOfItemsInSequence: 15, includesZero: true)
-println(anotherSequence.values)
 
 
 
-UInt.addWithOverflow(UInt.max, UInt.max)
 
-let (sum, didOverflow) = UInt.addWithOverflow(UInt.max, UInt.max)
+
+
 
