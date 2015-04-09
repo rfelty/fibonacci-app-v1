@@ -11,6 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     var fibonacciSequence = FibonacciSequence(numberOfItemsInSequence: 2, includesZero: true)
     @IBAction func updateFibonacciSequence() {
+        if includesZeroSwitch.on {
+            numberOfItemsSlider.maximumValue = 94
+        } else {
+            numberOfItemsSlider.maximumValue = 93
+        }
         fibonacciSequence = FibonacciSequence(numberOfItemsInSequence: UInt(numberOfItemsSlider.value), includesZero: includesZeroSwitch.on)
         textView.text = fibonacciSequence.values.description
         if includesZeroSwitch.on {
