@@ -10,13 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
     var fibonacciSequence = FibonacciSequence(numberOfItemsInSequence: 2, includesZero: true)
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var numberOfItemsSlider: UISlider!
+    @IBOutlet weak var includesZeroLabel: UILabel!
+    @IBOutlet weak var numberOfItemsLabel: UILabel!
+    @IBOutlet weak var includesZeroSwitch: UISwitch!
     @IBAction func updateFibonacciSequence() {
         if includesZeroSwitch.on {
             numberOfItemsSlider.maximumValue = 94
         } else {
             numberOfItemsSlider.maximumValue = 93
         }
-        fibonacciSequence = FibonacciSequence(numberOfItemsInSequence: UInt(numberOfItemsSlider.value), includesZero: includesZeroSwitch.on)
+        fibonacciSequence = FibonacciSequence(numberOfItemsInSequence: UInt64(numberOfItemsSlider.value), includesZero: includesZeroSwitch.on)
         textView.text = fibonacciSequence.values.description
         if includesZeroSwitch.on {
             includesZeroLabel.text = "Yes"
@@ -25,11 +30,7 @@ class ViewController: UIViewController {
         }
         numberOfItemsLabel.text = String(Int(numberOfItemsSlider.value))
     }
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var numberOfItemsSlider: UISlider!
-    @IBOutlet weak var includesZeroLabel: UILabel!
-    @IBOutlet weak var numberOfItemsLabel: UILabel!
-    @IBOutlet weak var includesZeroSwitch: UISwitch!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
